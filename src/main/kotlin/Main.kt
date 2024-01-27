@@ -1,6 +1,6 @@
 fun main() {
-    var contactList = mutableListOf<Contact>()
-    var isValidChoice = false
+    var contactList = mutableListOf<Contact>() //making a mutableList of Contacts.
+    var isValidChoice = false //a simple menu that repeats unless the user chooses to quit.
 
     while (!isValidChoice) {
         printMenu()
@@ -54,15 +54,15 @@ fun option1(contactList: MutableList<Contact>) {
     println()
     print("Phone number: ")
     var phone = readLine();
-    var newContact = Contact(first, last, phone)
-    contactList.add(newContact)
+    var newContact = Contact(first, last, phone) //creates a new contact with the given information
+    contactList.add(newContact) //adds that contact to the contactList
 
 }
 fun option2(contactList: MutableList<Contact>) {
     println("You selected Option 2.")
-    if (contactList.isNotEmpty()) {
+    if (contactList.isNotEmpty()) { //checks to make sure the contactlist is not empty
         val sortedContacts = contactList.sortedBy { it._first }
-        println("Contacts in alphabetical order:")
+        println("Contacts in alphabetical order by first name: ")
         sortedContacts.forEachIndexed { index, contact ->
             println("${index + 1}. Name: ${contact._first} ${contact._last},  Phone Number: ${contact._phone}")
         }
@@ -81,7 +81,6 @@ fun option3(contactList: MutableList<Contact>) {
         contactList.forEachIndexed { index, contact ->
             println("${index + 1}. Name: ${contact._first} ${contact._last}, Phone Number: ${contact._phone}")
         }
-
         val selectedIndex = readLine()?.toIntOrNull()?.minus(1)
 
         if (selectedIndex in 0 until contactList.size) {
@@ -115,9 +114,9 @@ fun option3(contactList: MutableList<Contact>) {
 fun option4(contactList: MutableList<Contact>) {
     println("You selected Option 4.")
     println("Enter search term:")
-    val searchTerm = readLine()?.toLowerCase() ?: ""
+    val searchTerm = readLine()?.toLowerCase() ?: "" //creates an empty string as our search term
 
-    val searchResults = contactList.filter {
+    val searchResults = contactList.filter { //finds anything in the list that has our search term
         it._first!!.toLowerCase().contains(searchTerm) ||
                 it._last!!.toLowerCase().contains(searchTerm) ||
                 it._phone!!.toLowerCase().contains(searchTerm)
