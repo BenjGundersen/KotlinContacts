@@ -1,8 +1,9 @@
 # Overview
 
-The software I wrote is a simple contacts app using the Kotlin programming language! 
+The software I wrote is a simple contacts app using the Kotlin programming language!
+Below is a link to my demo of the program and a quick overview of how it works.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Kotlin Contacts Program Demo Video](https://www.youtube.com/watch?v=Vb_K7Cksg9k&feature=youtu.be)
 
 # Development Environment
 
